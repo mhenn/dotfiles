@@ -16,17 +16,29 @@ cmp.setup({
         -- documentation = cmp.config.window.bordered(),
     },
     formatting = {
-    fields = {'menu', 'abbr', 'kind'},
-      format = function(entry, item)
-          local menu_icon ={
-              nvim_lsp = 'λ',
-              vsnip = '⋗',
-              buffer = 'Ω',
-              path = '🖫',
-          }
-          item.menu = menu_icon[entry.source.name]
-          return item
-      end,
+        fields = {'menu', 'abbr', 'kind'},
+        format = function(entry, item)
+            local menu_icon ={
+                nvim_lsp = 'λ',
+                vsnip = '⋗',
+                buffer = 'Ω',
+                path = '🖫',
+            }
+            item.menu = menu_icon[entry.source.name]
+            return item
+        end,
+    },
+    snippet = {
+        expand = function(args)
+            -- For `vsnip` user.
+            -- vim.fn["vsnip#anonymous"](args.body)
+
+            -- For `luasnip` user.
+            require("luasnip").lsp_expand(args.body)
+
+            -- For `ultisnips` user.
+            -- vim.fn["UltiSnips#Anon"](args.body)
+        end,
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),

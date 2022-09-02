@@ -13,6 +13,7 @@ vim.api.nvim_set_keymap('n', '<Leader>ff', "<Cmd>lua require'telescope.builtin'.
 vim.api.nvim_set_keymap('n', '<Leader>fg', "<Cmd>lua require'telescope.builtin'.live_grep()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>fb', "<Cmd>lua require'telescope.builtin'.buffers()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<Leader>fh', "<Cmd>lua require'telescope.builtin'.help_tags()<CR>", opts)
+vim.api.nvim_set_keymap('n', 'r', "<Cmd>redo<CR>", opts)
 
 
 

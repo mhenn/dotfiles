@@ -1,4 +1,4 @@
-vim.g.mhenn_colorscheme = "tokyonight"
+vim.g.mhenn_colorscheme = "gruvbox"
 
 function ColorMyPencils()
     vim.g.gruvbox_contrast_dark = 'hard'

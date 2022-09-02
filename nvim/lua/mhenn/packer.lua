@@ -16,6 +16,8 @@ return require("packer").startup(function()
     use('hrsh7th/cmp-path')
     use("hrsh7th/nvim-cmp")
 
+
+
 --    use("tzachar/cmp-tabnine", { run = "./install.sh" })
     use("onsails/lspkind-nvim")
     use("nvim-lua/lsp_extensions.nvim")
@@ -23,6 +25,7 @@ return require("packer").startup(function()
     use("simrat39/symbols-outline.nvim")
     use("L3MON4D3/LuaSnip")
     use("saadparwaiz1/cmp_luasnip")
+    use("rafamadriz/friendly-snippets")
     -- RUST STUFF
     use("simrat39/rust-tools.nvim")
     use("williamboman/mason.nvim")
@@ -37,6 +40,7 @@ return require("packer").startup(function()
 --    -- Colorscheme section
     use("gruvbox-community/gruvbox")
     use("folke/tokyonight.nvim")
+    use("chriskempson/base16-vim")
 --
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"

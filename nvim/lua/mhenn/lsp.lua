@@ -65,6 +65,12 @@ require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+require('lspconfig')['texlab'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 ----------------------------------------------------
 --
 --

@@ -6,6 +6,7 @@ require("mhenn.cmp")
 require("mhenn.colors")
 require("mhenn.TS")
 require("mhenn.telescope")
+require("mhenn.debug")
 require("mhenn.keymap")
 
 local augroup = vim.api.nvim_create_augroup
@@ -44,3 +45,4 @@ vim.g.netrw_winsize = 25
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("luasnip.loaders.from_vscode").lazy_load()
