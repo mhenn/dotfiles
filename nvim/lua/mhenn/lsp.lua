@@ -61,6 +61,15 @@ require('lspconfig')['rust_analyzer'].setup{
     }
 }
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+
+require'lspconfig'.denols.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
     flags = lsp_flags,

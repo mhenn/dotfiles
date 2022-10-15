@@ -16,7 +16,8 @@ return require("packer").startup(function()
     use('hrsh7th/cmp-path')
     use("hrsh7th/nvim-cmp")
 
-
+    use("lervag/vimtex")
+    use("ThePrimeagen/vim-be-good")
 
 --    use("tzachar/cmp-tabnine", { run = "./install.sh" })
     use("onsails/lspkind-nvim")
@@ -45,6 +46,7 @@ return require("packer").startup(function()
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
     })
+
 --
 --    use("nvim-treesitter/playground")
 --    use("romgrk/nvim-treesitter-context")

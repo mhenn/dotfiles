@@ -15,9 +15,6 @@ vim.api.nvim_set_keymap('n', '<Leader>fb', "<Cmd>lua require'telescope.builtin'.
 vim.api.nvim_set_keymap('n', '<Leader>fh', "<Cmd>lua require'telescope.builtin'.help_tags()<CR>", opts)
 vim.api.nvim_set_keymap('n', 'r', "<Cmd>redo<CR>", opts)
 
-
-
-
 require("telescope").setup({
 	defaults = {
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
