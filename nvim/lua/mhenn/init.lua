@@ -1,6 +1,7 @@
 require("mhenn.set")
 require("mhenn.packer")
 require("mhenn.lsp")
+require("mhenn.lspsaga")
 require("mhenn.rust")
 require("mhenn.cmp")
 require("mhenn.colors")

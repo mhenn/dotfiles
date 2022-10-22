@@ -1,6 +1,5 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local typescript_ok, typescript = pcall(require, 'typescript')
 require'lspconfig'.clangd.setup{}
 
 local opts = { noremap=true, silent=true }
@@ -71,8 +70,7 @@ lspconfig.rust_analyzer.setup{
 
 
 -- It enables tsserver automatically so no need to call lspconfig.tsserver.setup
-if typescript_ok then
-  typescript.setup({
+lspconfig.tsserver.setup({
     disable_commands = false, -- prevent the plugin from creating Vim commands
     debug = false, -- enable debug logging for commands
     -- LSP Config options
@@ -83,7 +81,6 @@ if typescript_ok then
       settings = require('lsp.servers.tsserver').settings,
     }
   })
-end
 
 lspconfig.tailwindcss.setup {
   capabilities = require('lsp.servers.tailwindcss').capabilities,
