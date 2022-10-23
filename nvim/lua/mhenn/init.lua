@@ -2,6 +2,10 @@ require("mhenn.set")
 require("mhenn.packer")
 require("mhenn.lsp")
 require("mhenn.lspsaga")
+
+require("mhenn.null-ls")
+require("mhenn.prettier")
+
 require("mhenn.rust")
 require("mhenn.cmp")
 require("mhenn.colors")
@@ -39,6 +43,15 @@ autocmd({"BufWritePre"}, {
     pattern = "*",
     command = "%s/\\s\\+$//e",
 })
+
+autocmd({"BufWritePre"}, {
+    group = mhenn,
+    pattern = "*.tsx",
+    command = "lua vim.lsp.buf.format()",
+})
+
+
+
 
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
