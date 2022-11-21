@@ -67,8 +67,13 @@ lspconfig.rust_analyzer.setup{
 --    "json-lsp", "lua-language-server", "tailwindcss-language-server", "typescript-language-server",
 --    "vue-language-server",  "node-debug2-adapter"
 --
-
-
+--
+lspconfig.denols.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+      root_dir = lspconfig.util.root_pattern("deno.json"),
+}
+--
 -- It enables tsserver automatically so no need to call lspconfig.tsserver.setup
 lspconfig.tsserver.setup({
     disable_commands = false, -- prevent the plugin from creating Vim commands
@@ -79,7 +84,8 @@ lspconfig.tsserver.setup({
       handlers = require('lsp.servers.tsserver').handlers,
       on_attach = require('lsp.servers.tsserver').on_attach,
       settings = require('lsp.servers.tsserver').settings,
-    }
+    },
+      root_dir = lspconfig.util.root_pattern("package.json")
   })
 
 lspconfig.tailwindcss.setup {
@@ -141,15 +147,18 @@ end
 --  "ts=typescript"
 --}
 --
---require'lspconfig'.denols.setup{
---    on_attach = on_attach,
---    flags = lsp_flags,
---}
 --
---require('lspconfig')['clangd'].setup{
---    on_attach = on_attach,
---    flags = lsp_flags,
---}
+require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+require('lspconfig')['cmake'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+
+
 --
 --require('lspconfig')['texlab'].setup{
 --    on_attach = on_attach,

@@ -5,7 +5,7 @@ local null_ls = require("null-ls")
 null_ls.setup({
     on_attach = function(client, bufnr)
         if client.server_capabilities.documentFormattingProvider then
-            vim.cmd("nnoremap <silent><buffer> <Leader>fo :lua vim.lsp.buf.format()<CR>")
+            vim.cmd("nnoremap <silent><buffer> <Leader>fo :lua vim.lsp.buf.formatting()<CR>")
 
             -- format on save
             vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.format()")
@@ -18,4 +18,4 @@ null_ls.setup({
 })
 
 local opts = { silent = true, noremap = true }
-vim.api.nvim_set_keymap('n', '<Leader>fr', "<Cmd>lua vim.lsp.buf.format()<CR>", {silent=false, noremap=true})
+vim.api.nvim_set_keymap('n', '<Leader>fr', "<Cmd>lua vim.lsp.buf.formatting()<CR>", {silent=false, noremap=true})

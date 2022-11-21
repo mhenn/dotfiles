@@ -47,7 +47,7 @@ autocmd({"BufWritePre"}, {
 autocmd({"BufWritePre"}, {
     group = mhenn,
     pattern = "*.tsx",
-    command = "lua vim.lsp.buf.format()",
+    command = "lua vim.lsp.buf.formatting()",
 })
 
 
